@@ -515,8 +515,7 @@ s = set(li) #This is a set
     # Python Modules
 # Random -
 
-import random
-from typing import Mapping
+# import random
 # randint = random.randint(0,9) #This will generate random 'integer' between 0 and 9
 # print(randint)
 
@@ -670,27 +669,78 @@ li = list(map(int, li)) #This will typecast all the items of the list to integer
 
     # Object and Classes in Python
 
-class student:
-    fees = 2390 # This is a class variable and it is shared by everyone
-    pass # This pass function is used when we want to leave something blank
+# class student:
+#     fees = 2390 # This is a class variable and it is shared by everyone
+#     pass # This pass function is used when we want to leave something blank
 
-himanshu = student()
-rohan = student()
+# himanshu = student()
+# rohan = student()
 
-himanshu.name = "Himanshu Tripathi" # This is an instance variable(It is the property of this object only)
-himanshu.standard = 8
-himanshu.div = "D"
+# himanshu.name = "Himanshu Tripathi" # This is an instance variable(It is the property of this object only)
+# himanshu.standard = 8
+# himanshu.div = "D"
 
-rohan.name = "Rohan Das"
-rohan.standard = 8
-rohan.div = "A"
+# rohan.name = "Rohan Das"
+# rohan.standard = 8
+# rohan.div = "A"
 
 # print(himanshu.name)
 
-print(student.fees)
-student.fees = 2000 # This will change the fees of every object in the class
-print(student.fees)
-rohan.fees = 1900 # This will change the fees of rohan only
-print(rohan.fees)
+# print(student.fees)
+# student.fees = 2000 # This will change the fees of every object in the class
+# print(student.fees)
+# rohan.fees = 1900 # This will change the fees of rohan only
+# print(rohan.fees)
 
-print(rohan.__dict__) #This will print all the variables of rohan in the form of a dictionary
+# print(rohan.__dict__) #This will print all the variables of rohan in the form of a dictionary
+
+
+    # Self and __init__() functions in Python 
+
+# class Employee:
+
+#     def __init__(self, name, salary, age): # This will run automatically when the object is created 
+#         self.name = name
+#         self.salary = salary 
+#         self.age = age
+
+#     def printdetails(self):
+#         return f"The name of the Employee is {self.name}. Salary is: {self.salary} and age is {self.age}."
+
+# harry = Employee("Haris Ali Khan", 800000, 25) 
+# print(harry.printdetails()) #This will run the function and pass the object automatically to the function because the function contains self 
+
+
+    # Class Method in Python
+
+class emp:
+    leaves = 5
+    
+    def __init__(self, name, salary, age):
+        self.name = name
+        self.salary = salary
+        self.age = age
+    
+    @classmethod
+    def change_leaves(cls, no): #cls here means class name
+        cls.leaves = no 
+
+    @classmethod
+    def from_slash(cls,string):
+        return cls(*string.split("/"))
+
+himanshu = emp("Himanshu", 99999, 13)
+
+# himanshu.change_leaves(6) #This will change the number of leaves of the whole class 
+# print(himanshu.leaves)
+# print(emp.leaves)
+
+
+    # Class method as alternative constructor
+
+# See function named "from_salsh" in the previous section
+
+RohanDas = emp.from_slash("Rohan Das/10000/15")
+# print(RohanDas.name)
+# print(RohanDas.salary)
+# print(RohanDas.age)
