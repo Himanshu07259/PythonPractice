@@ -699,6 +699,7 @@ li = list(map(int, li)) #This will typecast all the items of the list to integer
 
 # class Employee:
 
+# self is the name of the object
 #     def __init__(self, name, salary, age): # This will run automatically when the object is created 
 #         self.name = name
 #         self.salary = salary 
@@ -711,7 +712,7 @@ li = list(map(int, li)) #This will typecast all the items of the list to integer
 # print(harry.printdetails()) #This will run the function and pass the object automatically to the function because the function contains self 
 
 
-    # Class Method in Python
+    # Class Method and other methods in Python
 
 class emp:
     leaves = 5
@@ -721,13 +722,21 @@ class emp:
         self.salary = salary
         self.age = age
     
+    def printdetails(self):
+        return f"The name is: {self.name}. The salary is: {self.salary} and the age is: {self.age}"
+
     @classmethod
     def change_leaves(cls, no): #cls here means class name
         cls.leaves = no 
 
     @classmethod
-    def from_slash(cls,string):
+    def from_slash(cls,string): # Class Methods as alternative constructor
         return cls(*string.split("/"))
+
+    @staticmethod # We use staticmethod when we want to make a function that neither takes self or cls 
+    def printsome(stat):
+        print(stat)
+        
 
 himanshu = emp("Himanshu", 99999, 13)
 
@@ -744,3 +753,46 @@ RohanDas = emp.from_slash("Rohan Das/10000/15")
 # print(RohanDas.name)
 # print(RohanDas.salary)
 # print(RohanDas.age)
+
+
+    # Static Methods(Decorator) 
+    
+# RohanDas.printsome("Rohan is a good boy")
+
+
+    # Single inheritance 
+
+class programmer(emp): # This class inherits all the functions and properties of emp class
+
+    def __init__(self, name, salary, age, progLang):
+        self.name = name
+        self.salary = salary
+        self.age = age
+        self.prolang = progLang
+
+    def printprog(self):
+        return f"Name: {self.name} \n Salary: {self.salary} \n Age: {self.age} \n Programming Languages: {self.prolang}"
+
+anshu = programmer("Anshu", 1000000, 20, ["Python", "C++"])
+# print(anshu.printprog())
+
+
+    # Multiple inheritance 
+
+class player:
+    leaves = 6
+
+    def __init__(self, name, game):
+        self.name = name
+        self.game = game 
+
+    def printdetails(self):
+        return f"The name of the player is {self.name} and game(s) is/are: {self.game}"
+
+
+class progamer(emp, player): # Here the presidency for the constructor goes to the class inherited first, i.e. emp  
+    leaves = 7 #This has the presidency even if this variable is present in other inherited class too
+
+ankit = progamer("Ankit", 100000, 18)
+# print(ankit.age)
+# print(ankit.leaves)
