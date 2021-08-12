@@ -634,7 +634,8 @@ li = list(map(int, li)) #This will typecast all the items of the list to integer
 # def grter(n):
 #     return n>4
 
-# The filter function tests a specific user-defined condition for a function and returns an iterable for the elements and values that satisfy the condition or, in other words, return true.
+# The filter function tests a specific user-defined condition for a function and returns an iterable for the 
+# elements and values that satisfy the condition or, in other words, return true.
 # greater = list(filter(grter,li))
 # print(greater)
 
