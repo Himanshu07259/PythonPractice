@@ -797,3 +797,30 @@ class progamer(emp, player): # Here the presidency for the constructor goes to t
 ankit = progamer("Ankit", 100000, 18)
 # print(ankit.age)
 # print(ankit.leaves)
+
+
+    # Multilevel Inheritance 
+
+class cricketer(progamer): # Constructor of emp class
+    pass
+# This class inherited the progamer class and as the progamer class inherited other classs, this class also inherited those classes
+
+aniket = cricketer("Aniket", 20000, 16)
+# print(aniket.leaves)
+# print(aniket.printdetails())
+
+
+    # Private, Public and Protected access specifiers 
+
+# class Pri:
+#     pub = 1 # This is a public variable
+#     _pro = 2 # This is a protected variable which can be accessed only by the class itself and the classes derived from it
+#     __pr = 3 # This is a private variable and it is only accessible by the class itself 
+
+# rishabh = Pri()
+# print(rishabh.pub) # Accessing the public variable of the class by its object
+# print(rishabh._pro) # Accessing the protected variable of the class
+
+# print(rishabh.__pr) # This will throw error. Python doesn't has functions like Java to protect its private variables, so python uses the concept of data mangling, i.e. stores the variable in a different name. 
+
+# print(rishabh._Pri__pr) # Accessing the private variable of the class 
