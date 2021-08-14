@@ -824,3 +824,142 @@ aniket = cricketer("Aniket", 20000, 16)
 # print(rishabh.__pr) # This will throw error. Python doesn't has functions like Java to protect its private variables, so python uses the concept of data mangling, i.e. stores the variable in a different name. 
 
 # print(rishabh._Pri__pr) # Accessing the private variable of the class 
+
+
+    # Overriding in Python
+
+# class A:
+
+#     classvar1 = "I am a class variable in class A"
+
+#     def __init__(self):
+#         self.var1 = "I am in class A's constructor"
+        # self.special = "I am Special "
+        # self.classvar1 = "I am the instance variable of A's object" # This will be the value of classvar1 if we make an object, but, when we comment out this line, then the class variable will be printed. This is function overriding.
+
+# class B(A):
+
+#     def __init__(self):
+#         super().__init__() # This will run the constructor of class A
+        # But, if we want to change some varibles then we can do that 
+        # self.var1 = "I am in class B's constructor" 
+        # self.var2 = "This is a new variable"
+
+        # print(super().classvar1) # This will print the class variable of class A
+        # print(self.classvar1) # But, this will print the instance variable of the object 
+
+# ObjB = B()
+# print(ObjB.var1)
+# print(ObjB.var1)
+# print(ObjB.special)
+
+
+    # Diamond-Shape Problem 
+# https://www.youtube.com/watch?v=mEF_vVNTPUY&list=PLu0W_9lII9agICnT8t4iYVSZ3eykIAOME&index=67
+
+
+    # Operators overloading and dunder methods in Python 
+# Functions starting and ending with double underscore(__) are called dunder methods.
+ 
+# class C:
+
+#     def __init__(self, name, salary): # This is a dunder method
+#         self.name = name
+#         self.salary = salary
+
+#     def __repr__(self): # If we comment out the function __str__, then this function will be used 
+#         return "This is __repr__"
+
+#     def __str__(self): 
+#          return "This is __str__"
+
+#     def __add__(self,other): # This is an example of operator overloading
+#         return self.salary + other.salary 
+
+# c1 = C("c1", 5000)
+# c2 = C("c2", 10000)
+# print(c1 + c2) # If we comment out the function __add__ then this will throw error
+# print(c1) # By default, the  __str__ function will be used 
+# print(repr(c1)) # Using the __repr__ function
+
+
+    # Abstract Base Class & @abstractmethod
+
+from abc import ABC, abstractmethod
+
+# @abstractmethod is a decorator that is used to ensure that the child class of a parent class has the given function or else it will throw error
+# Ex - Shown Below 
+class abs(ABC):
+
+    @abstractmethod 
+    def printdetails():
+        pass
+
+class abs2(abs):
+    def __init__(self,name):
+        self.name = name 
+    
+    def printdetails(): # This function must be present or the program will throw error
+        pass
+
+s = abs2("Abstract")
+
+
+    # Setter and Property decorators in Python
+# https://www.codewithharry.com/videos/python-tutorials-for-absolute-beginners-69
+
+# class Employee:
+#     def __init__(self, fname, lname):
+#         self.fname = fname
+#         self.lname = lname
+#         # self.email = f"{fname}.{lname}@codewithharry.com"
+
+#     def explain(self):
+#         return f"This employee is {self.fname} {self.lname}"
+
+#     @property
+#     def email(self):
+#         if self.fname==None or self.lname == None:
+#             return "Email is not set. Please set it using setter"
+#         return f"{self.fname}.{self.lname}@codewithharry.com"
+
+#     @email.setter
+#     def email(self, string):
+#         print("Setting now...")
+#         names = string.split("@")[0]
+#         self.fname = names.split(".")[0]
+#         self.lname = names.split(".")[1]
+
+#     @email.deleter
+#     def email(self):
+#         self.fname = None
+#         self.lname = None
+
+
+# hindustani_supporter = Employee("Hindustani", "Supporter")
+# nikhil_raj_pandey = Employee("Nikhil", "Raj")
+
+# print(hindustani_supporter.email)
+
+# hindustani_supporter.fname = "US"
+
+# print(hindustani_supporter.email)
+# hindustani_supporter.email = "this.that@codewithharry.com"
+# print(hindustani_supporter.fname)
+
+# del hindustani_supporter.email
+# print(hindustani_supporter.email)
+# hindustani_supporter.email = "Harry.Perry@codewithharry.com"
+# print(hindustani_supporter.email)
+
+
+    # Object Introspection in Python
+
+# Introspection ---> Introspection means ability to recognize an object along with its properties
+
+# Ways of introspection -
+# We are just going to see three ways 
+
+# print(type("This is a string")) # Way no. 1. . This will print the datatype of the string.
+# print(id("This is id")) # Way no. 2 . This will print the id where the object is stored.
+# print(dir("This is dir")) # Way no. 3 . This will print the attributes of the string. 
