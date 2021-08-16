@@ -963,3 +963,26 @@ s = abs2("Abstract")
 # print(type("This is a string")) # Way no. 1. . This will print the datatype of the string.
 # print(id("This is id")) # Way no. 2 . This will print the id where the object is stored.
 # print(dir("This is dir")) # Way no. 3 . This will print the attributes of the string. 
+
+
+    # Generators in Python 
+"""
+Iterable - Which can be iterated. Functions defined - __iter__() or __getitem__() 
+Iterator - Fuction defined - __next__() 
+Iteration -
+"""
+
+# def iter(n):
+
+    # for i in range(n):
+        # yield i
+        # print(i)
+
+# g = iter(3) 
+# print(g.__next__())
+# print(g.__next__())
+# print(g.__next__())
+# print(g.__next__()) # This line will throw error
+
+# for i in g:
+#     print(i)
