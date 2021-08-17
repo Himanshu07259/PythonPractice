@@ -98,7 +98,7 @@ alphabets1 = ['o','s','w','q','z','v','x','s']
 # index = alphabets.index('a') #This will give the place value where 'a' is i.e. 0 . If 'a' is not present in the list then this will throw an error
 # print(index)
 
-# tup = (1,1,2) # This is a tuple because it is enclosed in parenthesis
+# tup = (1,1,2) # This is a tuple as it is enclosed in parenthesis
 
 
 
@@ -986,3 +986,87 @@ Iteration -
 
 # for i in g:
 #     print(i)
+
+
+    # Comprehensions in Python 
+
+# Comprehension -- Comprehension means compressing the code and making a four or five lines of code into a one-liner.
+
+# List comprehension
+
+# li10 = [ist for ist in range(10) if ist%2==0] # This is list comprehension where we have made a four to five lines of code into one-liner.
+# print(li10)
+
+# Dictionary comprehension  
+
+# dic8 = {key:f"item {key}" for key in range(15) if key%3 == 0} # Dictionary comprehension
+# print(dic8)
+
+# dic9 = {value:key for key,value in dic8.items()} # Reversing the dictionary
+# print(dic9)
+
+# Set comprehensions 
+
+# set1 = {ite for ite in ["Harry","Himanshu",
+#                         "Harry","Himanshu"]} # Set comprehension
+# print(type(set1))
+# print(set1)
+
+# Generator comprehension 
+
+# gener = (insp for insp in range(20) if insp % 5 == 0) # Generator comprehension
+# print(type(gener))
+# print(gener.__next__())
+# print(gener.__next__())
+# for items in gener:
+#     print(items)
+
+
+    # Else with For loop in Python
+# The else statement is executed in a for loop when the for loop ends normally i.e. without break statement
+
+# for item in l1:
+#     if item == "chopsticks":
+#         print("Item Found")
+#         break
+
+# else:
+#     print("Item not found") #If break statement executed, then this line will be printed
+
+
+    # Function Caching in Python
+
+# import time
+# from functools import lru_cache
+
+# @lru_cache(maxsize=3) # This will store the latest 3 calls of the function below
+# def someTime(n):
+#     time.sleep(n)
+
+# print("Calling...")
+# someTime(3) # This will be cached in the memory but will not take time when it is called again
+# print("Done!")
+
+# print("Calling again...")
+# someTime(3) # This will not take time again as python stored or cached the last call 
+# print("Done!!")
+
+
+    # Else & Finally in Python
+
+# try:
+#     f = open("does.txt")
+
+# except IOError as e:
+#     print("IO error occured")
+
+# except EOFError as e: # There could be more than one except statements
+#     print("EOF error occured")
+
+# else: # This will be executed if the except statement is not executed 
+#     print("No except executed")
+
+# finally: # This will be printed anyway i.e. either the except statement gets executed or not it doesn't matter
+#     print("This will be printed anyway")
+
+# print("Done")
