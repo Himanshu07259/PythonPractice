@@ -885,24 +885,24 @@ aniket = cricketer("Aniket", 20000, 16)
 
     # Abstract Base Class & @abstractmethod
 
-from abc import ABC, abstractmethod
+# from abc import ABC, abstractmethod
 
-# @abstractmethod is a decorator that is used to ensure that the child class of a parent class has the given function or else it will throw error
+# @abstractmethod is a decorator that is used to ensure that the child class of a parent class has the given functions
 # Ex - Shown Below 
-class abs(ABC):
+# class abs(ABC):
 
-    @abstractmethod 
-    def printdetails():
-        pass
+#     @abstractmethod 
+#     def printdetails():
+#         pass
 
-class abs2(abs):
-    def __init__(self,name):
-        self.name = name 
+# class abs2(abs):
+#     def __init__(self,name):
+#         self.name = name 
     
-    def printdetails(): # This function must be present or the program will throw error
-        pass
+#     def printdetails(): # This function must be present or the program will throw error
+#         pass
 
-s = abs2("Abstract")
+# s = abs2("Abstract")
 
 
     # Setter and Property decorators in Python
@@ -1070,3 +1070,99 @@ Iteration -
 #     print("This will be printed anyway")
 
 # print("Done")
+
+
+    # Coroutines in Python
+# Coroutines are used when we want a function to not to read data again and again which consumes time
+
+# def cor():
+#     text = "This is a big text which contains some words"
+#     import time
+#     time.sleep(2) # Just suppose that this is a task that takes 2 seconds
+
+#     while True:
+#         given = (yield)
+#         if given in text:
+#             print("Word found")
+#         else:
+#             print("Not found")
+
+# corou = cor()
+# corou.__next__()
+# corou.send("big")
+# input("Press any key")
+# corou.send("This")
+# corou.close()
+
+# print("Program ended")
+
+    # OS Module in Python
+
+# import os
+
+# print(dir(os))
+# print(os.getcwd())
+# os.chdir("C://")
+# print(os.getcwd())
+# f = open("harry.txt")
+# print(os.listdir("C://"))
+# os.makedirs("This/that")
+# os.rename("harry.txt", "codewithharry.txt")
+# print(os.environ.get('Path'))
+# print(os.path.join("C:/", "/harry.txt"))
+
+# print(os.path.exists("C://Program Files2"))
+# print(os.path.isfile("C://Program Files"))
+
+
+    # Request module for HTTP Requests
+
+# import requests
+
+# url = "www.somewebsite.com"
+'''
+data = {
+    "emailaddress" : "email@email.com",
+    "password" : "passwordHere"
+}
+'''
+# req = requests.post(url=url, data=data)
+# print(req.content)
+
+# r = requests.get("http://codingwithhimanshu.epizy.com")
+# print(r)
+# print(r.text) # This will print all the code of the given web page
+# print(r.status_code) # This will print the status code
+
+
+    # Json module in Python - https://www.youtube.com/watch?v=9U4dHBOzmaE&list=PLu0W_9lII9agICnT8t4iYVSZ3eykIAOME&index=83
+
+
+    # Pickle module  in Python
+
+# import pickle
+# Pickling means preserving. We use the pickle module in Python for the same purpose.
+
+# Pickling a file
+# lis1 = ["Himanshu","Ankit","Anshu"]
+# fil = "him.pkl"
+
+# fileObj = open(fil,"wb")
+# pickle.dump(lis1,fileObj)
+# fileObj.close()
+
+# # Unpickling a file
+# file = "him.pkl"
+
+# filObj = open(file,"rb")
+# txt = pickle.load(filObj)
+# print(txt)
+# filObj.close()
+
+
+    # Raise in Python 
+# Raise - Raise is used when we want to raise an error and terminate the program 
+
+# name = input("Enter your name ")
+# if name == "Himanshu":
+#     raise NameError("Himanshu is blocked") # This will raise an error 
